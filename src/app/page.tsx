@@ -1,24 +1,25 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Manifesto from "@/components/Manifesto";
-import BentoGrid from "@/components/BentoGrid";
-import Timeline from "@/components/Timeline";
-import BeyondTerminal from "@/components/BeyondTerminal";
-import Connect from "@/components/Connect";
+import HeroSection from "@/components/home/HeroSection";
+import AboutPreview from "@/components/home/AboutPreview";
+import WhatIDo from "@/components/home/WhatIDo";
+import FeaturedVentures from "@/components/home/FeaturedVentures";
+import JourneyPreview from "@/components/home/JourneyPreview";
+import BeyondWorkPreview from "@/components/home/BeyondWorkPreview";
+import ThoughtsPreview from "@/components/home/ThoughtsPreview";
+import CurrentlyExploring from "@/components/home/CurrentlyExploring";
+import ConnectCTA from "@/components/home/ConnectCTA";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
-        <Hero />
-        <Manifesto />
-        <BentoGrid />
-        <Timeline />
-        <BeyondTerminal />
-        <Connect />
-      </main>
+    <div>
+      <HeroSection />
+      <AboutPreview />
+      <WhatIDo />
+      <FeaturedVentures />
+      <JourneyPreview />
+      <BeyondWorkPreview />
+      <ThoughtsPreview />
+      <CurrentlyExploring />
+      <ConnectCTA />
     </div>
   );
 }
-

@@ -1,21 +1,44 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "SURAJ PRAKASH PATEL | Systems Architect & GovTech Entrepreneur",
-  description: "Personal portfolio and vision manifesto of SURAJ PRAKASH PATEL, building the digital infrastructure for municipal governance, smart automation, and heavy industry.",
-  keywords: ["SURAJ PRAKASH PATEL", "Systems Architect", "GovTech", "Industrial Automation", "Kartavya", "Fleet Stack", "Reverse Auction", "TISS Incube"],
-  authors: [{ name: "SURAJ PRAKASH PATEL" }],
+  title: {
+    default: "Suraj Prakash Patel — Entrepreneur, Technologist & Explorer of Ideas",
+    template: "%s | Suraj Prakash Patel",
+  },
+  description:
+    "Personal website, founder's story, professional portfolio, and living archive of Suraj Prakash Patel. Building software, exploring ideas, and figuring out the world along the way.",
+  keywords: [
+    "Suraj Prakash Patel",
+    "Suraj Patel",
+    "Entrepreneur",
+    "Technologist",
+    "Curiosity Lab",
+    "Kartavya",
+    "Cosmobyte Technologies",
+    "GovTech",
+    "Software Architecture",
+    "Raigarh Chhattisgarh",
+  ],
+  authors: [{ name: "Suraj Prakash Patel" }],
+  creator: "Suraj Prakash Patel",
+  metadataBase: new URL("https://surajpatel.com"),
   openGraph: {
-    title: "SURAJ PRAKASH PATEL | Systems Architect & GovTech Entrepreneur",
-    description: "Building the intelligence behind tomorrow's infrastructure.",
+    title: "Suraj Prakash Patel — Entrepreneur & Technologist",
+    description:
+      "Building things, exploring ideas, and figuring out the world along the way. Founder of Curiosity Lab & Kartavya.",
     type: "website",
+    locale: "en_US",
+    siteName: "Suraj Prakash Patel",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SURAJ PRAKASH PATEL | Systems Architect & GovTech Entrepreneur",
-    description: "Building the intelligence behind tomorrow's infrastructure.",
-  }
+    title: "Suraj Prakash Patel — Entrepreneur & Technologist",
+    description: "Building things, exploring ideas, and figuring out the world along the way.",
+    creator: "@surajpatel",
+  },
 };
 
 export default function RootLayout({
@@ -24,19 +47,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className="scroll-smooth h-full antialiased"
-    >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-      </head>
-      <body className="bg-neutral-950 text-neutral-100 min-h-screen overflow-x-hidden selection:bg-neutral-850 selection:text-white">
-        {children}
+    <html lang="en" className="scroll-smooth h-full antialiased">
+      <body className="bg-[#F6F5F1] text-[#202328] min-h-screen flex flex-col font-sans selection:bg-[#202328] selection:text-white">
+        <Navbar />
+        <main className="flex-grow pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );
 }
-
