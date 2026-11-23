@@ -26,7 +26,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -38,23 +38,20 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "py-3 bg-[#F6F5F1]/90 backdrop-blur-md border-b border-[#E4E1D8]/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)]"
-            : "py-5 bg-transparent border-b border-transparent"
+            ? "py-3 bg-white/80 backdrop-blur-xl border-b border-neutral-200/70 shadow-[0_1px_10px_rgba(0,0,0,0.03)]"
+            : "py-4 bg-white/60 backdrop-blur-md border-b border-neutral-100"
         )}
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo / Monogram */}
+          {/* Logo / Brand Name */}
           <Link href="/" className="group flex items-center gap-2">
-            <span className="font-serif text-xl md:text-2xl font-normal tracking-tight text-[#202328] group-hover:text-[#2B536E] transition-colors">
-              SURaj<span className="font-serif italic text-[#B86B2F]">.</span>
-            </span>
-            <span className="hidden sm:inline-block text-[11px] font-sans uppercase tracking-widest text-[#717A84] border-l border-[#E4E1D8] pl-2.5 ml-1">
-              Curious by Nature
+            <span className="font-sans text-sm sm:text-base font-semibold tracking-tight text-neutral-900 group-hover:text-blue-600 transition-colors">
+              SURAJ PRAKASH PATEL
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive =
                 link.href === "/"
@@ -65,10 +62,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "px-3 py-1.5 text-xs font-sans tracking-wide transition-all rounded-sm",
+                    "px-3 py-1.5 text-xs font-sans font-medium tracking-normal transition-all rounded-full",
                     isActive
-                      ? "text-[#202328] font-medium bg-[#EFECE6]"
-                      : "text-[#5A626A] hover:text-[#202328] hover:bg-[#EFECE6]/50"
+                      ? "text-neutral-900 bg-neutral-100"
+                      : "text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50"
                   )}
                 >
                   {link.name}
@@ -78,17 +75,17 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action / Status */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <Link
               href="/now"
-              className="inline-flex items-center gap-1.5 text-[11px] font-sans tracking-wider uppercase text-[#5A626A] hover:text-[#202328] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-sans text-neutral-600 hover:text-neutral-900 px-3 py-1 rounded-full border border-neutral-200/70 bg-neutral-50/60 hover:bg-neutral-100/60 transition-all"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>Now</span>
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1 text-xs font-sans font-medium px-3.5 py-1.5 bg-[#202328] text-white hover:bg-[#2B536E] transition-colors shadow-xs"
+              className="inline-flex items-center gap-1 text-xs font-sans font-medium px-4 py-1.5 bg-neutral-900 text-white hover:bg-neutral-800 rounded-full transition-all shadow-xs"
             >
               <span>Connect</span>
               <ArrowUpRight size={13} />
@@ -98,7 +95,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-[#202328] hover:bg-[#EFECE6] transition-colors focus:outline-hidden"
+            className="lg:hidden p-2 text-neutral-800 hover:bg-neutral-100 rounded-full transition-colors focus:outline-hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -110,13 +107,13 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[60px] z-40 bg-[#F6F5F1] border-b border-[#E4E1D8] shadow-lg lg:hidden px-6 py-6"
+            className="fixed inset-x-0 top-[60px] z-40 bg-white/95 backdrop-blur-xl border-b border-neutral-200 shadow-xl lg:hidden px-6 py-6"
           >
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-1">
               {navLinks.map((link) => {
                 const isActive =
                   link.href === "/"
@@ -128,31 +125,31 @@ export default function Navbar() {
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
-                      "px-3 py-2 text-sm font-sans tracking-wide transition-colors flex items-center justify-between",
+                      "px-3.5 py-2.5 text-sm font-sans tracking-normal transition-colors rounded-xl flex items-center justify-between",
                       isActive
-                        ? "text-[#202328] font-medium bg-[#EFECE6]"
-                        : "text-[#5A626A] hover:text-[#202328]"
+                        ? "text-neutral-900 font-semibold bg-neutral-100"
+                        : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
                     )}
                   >
                     <span>{link.name}</span>
-                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#B86B2F]" />}
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />}
                   </Link>
                 );
               })}
 
-              <div className="pt-4 border-t border-[#E4E1D8] flex items-center justify-between">
+              <div className="pt-4 mt-2 border-t border-neutral-100 flex items-center justify-between">
                 <Link
                   href="/now"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center gap-2 text-xs text-[#5A626A]"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-neutral-600"
                 >
-                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>See what I&apos;m doing now</span>
                 </Link>
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-1.5 text-xs font-sans font-medium bg-[#202328] text-white"
+                  className="px-4 py-1.5 text-xs font-sans font-medium bg-neutral-900 text-white rounded-full hover:bg-neutral-800 transition-colors"
                 >
                   Let&apos;s Talk
                 </Link>

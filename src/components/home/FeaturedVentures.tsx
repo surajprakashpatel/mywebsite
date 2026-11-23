@@ -6,67 +6,67 @@ export default function FeaturedVentures() {
   const featured = projects.filter((p) => p.featured).slice(0, 3);
 
   return (
-    <section className="py-20 px-6 border-b border-[#E4E1D8]">
+    <section className="py-20 md:py-24 px-6 border-b border-neutral-200/70 bg-neutral-50/50">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-[#B86B2F]">
-              03 // Selected Portfolio
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+              03 • Selected Portfolio
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-light text-[#202328] tracking-tight mt-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight mt-1">
               Things I&apos;ve Built
             </h2>
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-wider text-[#202328] hover:text-[#2B536E] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-neutral-900 hover:text-blue-600 transition-colors"
           >
             <span>View All Projects</span>
             <ArrowRight size={14} />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featured.map((project) => (
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}
-              className="editorial-card p-7 flex flex-col justify-between group block"
+              className="rounded-2xl bg-white border border-neutral-200/80 p-7 flex flex-col justify-between group shadow-xs hover:border-neutral-300 hover:shadow-lg transition-all"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-[#717A84] font-sans mb-4">
-                  <span className="uppercase tracking-wider font-medium text-[#2B536E]">
+                <div className="flex items-center justify-between text-xs text-neutral-500 font-sans mb-4">
+                  <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-medium text-[11px]">
                     {project.category}
                   </span>
                   <span>{project.year}</span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-light text-[#202328] group-hover:text-[#2B536E] transition-colors flex items-center justify-between mb-1">
+                <h3 className="text-xl font-bold text-neutral-900 group-hover:text-blue-600 transition-colors flex items-center justify-between mb-1 tracking-tight">
                   <span>{project.title}</span>
                   <ArrowUpRight
                     size={16}
                     className="opacity-0 group-hover:opacity-100 transition-opacity"
                   />
                 </h3>
-                <p className="text-xs font-sans text-[#717A84] mb-4">{project.subtitle}</p>
+                <p className="text-xs font-medium text-neutral-500 mb-3">{project.subtitle}</p>
 
-                <p className="text-sm font-sans text-[#5A626A] font-light leading-relaxed line-clamp-3">
+                <p className="text-sm text-neutral-600 font-normal leading-relaxed line-clamp-3">
                   {project.excerpt}
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#ECEAE3] space-y-3">
+              <div className="mt-8 pt-4 border-t border-neutral-100 space-y-3">
                 {project.stats && (
-                  <div className="flex items-center justify-between text-xs font-sans">
-                    <span className="text-[#717A84]">{project.stats.label}</span>
-                    <span className="font-serif font-medium text-[#202328]">{project.stats.value}</span>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-neutral-500">{project.stats.label}</span>
+                    <span className="font-semibold text-neutral-900">{project.stats.value}</span>
                   </div>
                 )}
                 <div className="flex flex-wrap gap-1.5">
                   {project.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-mono px-2 py-0.5 bg-[#F6F5F1] text-[#717A84] border border-[#E4E1D8]"
+                      className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-600"
                     >
                       {tag}
                     </span>

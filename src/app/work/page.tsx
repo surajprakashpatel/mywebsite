@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const workCategories = [
   {
     title: "Entrepreneurship",
-    icon: <Building2 className="w-6 h-6 text-[#2B536E]" />,
+    icon: <Building2 className="w-5 h-5 text-neutral-900" />,
     description:
       "Identifying unaddressed market bottlenecks, understanding grassroots business dynamics, managing unit economics, and executing with extreme capital efficiency in non-metro ecosystems.",
     capabilities: [
@@ -24,7 +24,7 @@ const workCategories = [
   },
   {
     title: "Technology & Software",
-    icon: <Code2 className="w-6 h-6 text-[#2B536E]" />,
+    icon: <Code2 className="w-5 h-5 text-neutral-900" />,
     description:
       "Designing distributed cloud backends, resilient mobile clients, and low-latency bidding architectures. Prioritizing deterministic data guarantees, offline sync, and maintainable systems.",
     capabilities: [
@@ -36,7 +36,7 @@ const workCategories = [
   },
   {
     title: "Problem Solving",
-    icon: <Target className="w-6 h-6 text-[#2B536E]" />,
+    icon: <Target className="w-5 h-5 text-neutral-900" />,
     description:
       "Applying software where paper registers and opacity created massive friction: municipal ghost-worker fraud, property tax revenue leakages, and opaque industrial raw material procurement.",
     capabilities: [
@@ -50,59 +50,59 @@ const workCategories = [
 
 export default function WorkPage() {
   return (
-    <div className="py-16 md:py-24 px-6">
+    <div className="py-16 md:py-24 px-6 bg-white">
       <div className="max-w-5xl mx-auto space-y-20">
         {/* Header */}
-        <div className="space-y-4 border-b border-[#E4E1D8] pb-12">
-          <span className="text-xs font-sans font-semibold uppercase tracking-widest text-[#B86B2F]">
+        <div className="space-y-4 border-b border-neutral-200/70 pb-12">
+          <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
             Professional Identity
           </span>
-          <h1 className="font-serif text-4xl sm:text-5xl font-light text-[#202328] tracking-tight">
-            Building companies, architectures & <br />
-            <span className="italic font-normal">pragmatic solutions.</span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Companies, systems & <br />
+            <span className="text-neutral-500 font-normal">engineering disciplines.</span>
           </h1>
-          <p className="font-sans text-lg text-[#5A626A] font-light max-w-2xl leading-relaxed">
-            I divide my professional work into three core pillars: entrepreneurial venture creation, software engineering rigor, and solving high-friction operational challenges in traditional sectors.
+          <p className="text-base sm:text-lg text-neutral-600 font-normal max-w-2xl leading-relaxed">
+            I build software where technology has historically been missing: municipal corporations, local government offices, and heavy industrial supply chains in Central India.
           </p>
         </div>
 
-        {/* 3 Pillars Section */}
+        {/* 3 Pillars of Work */}
         <div className="space-y-8">
           <div>
-            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-[#B86B2F]">
-              Pillars of Practice
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+              Disciplinary Focus
             </span>
-            <h2 className="font-serif text-3xl font-light text-[#202328] mt-1">
-              How I Operate
+            <h2 className="text-3xl font-bold text-neutral-900 tracking-tight mt-1">
+              Core Capabilities
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {workCategories.map((cat) => (
               <div
                 key={cat.title}
-                className="editorial-card p-6 sm:p-7 flex flex-col justify-between space-y-6 bg-white"
+                className="rounded-2xl bg-white border border-neutral-200/80 p-7 flex flex-col justify-between space-y-6 shadow-xs hover:border-neutral-300 hover:shadow-md transition-all group"
               >
                 <div>
-                  <div className="p-3 w-fit bg-[#F6F5F1] border border-[#E4E1D8] mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center mb-5 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
                     {cat.icon}
                   </div>
-                  <h3 className="font-serif text-2xl font-light text-[#202328] mb-2">
+                  <h3 className="text-xl font-bold text-neutral-900 mb-2 tracking-tight">
                     {cat.title}
                   </h3>
-                  <p className="font-sans text-xs sm:text-sm text-[#5A626A] font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
                     {cat.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#ECEAE3] space-y-2">
-                  <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-[#717A84]">
-                    Core Capabilities
+                <div className="pt-4 border-t border-neutral-100 space-y-2">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-neutral-900 block">
+                    Capabilities:
                   </span>
-                  <ul className="space-y-1.5 text-xs font-sans text-[#202328]">
+                  <ul className="space-y-1.5 text-xs text-neutral-600">
                     {cat.capabilities.map((cap) => (
-                      <li key={cap} className="flex items-start gap-1.5">
-                        <span className="text-[#B86B2F] font-bold">•</span>
+                      <li key={cap} className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
                         <span>{cap}</span>
                       </li>
                     ))}
@@ -113,65 +113,49 @@ export default function WorkPage() {
           </div>
         </div>
 
-        {/* Dedicated Company Profiles */}
-        <div className="space-y-12 pt-8 border-t border-[#E4E1D8]">
+        {/* Ventures List */}
+        <div className="space-y-8">
           <div>
-            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-[#B86B2F]">
-              Entities & Ventures
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+              Ventures & Companies
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#202328] mt-1">
-              Companies & Flagship Ventures
+            <h2 className="text-3xl font-bold text-neutral-900 tracking-tight mt-1">
+              Organizations I&apos;ve Founded
             </h2>
-            <p className="font-sans text-sm text-[#5A626A] max-w-xl font-light mt-2">
-              Each venture serves a specific purpose in translating digital technology into tangible real-world value.
-            </p>
           </div>
 
-          <div className="space-y-10">
+          <div className="space-y-8">
             {ventures.map((venture) => (
               <div
-                key={venture.id}
-                className="editorial-card p-8 sm:p-10 space-y-8 bg-white"
+                key={venture.name}
+                className="rounded-2xl bg-white border border-neutral-200/80 p-8 space-y-6 shadow-xs hover:border-neutral-300 hover:shadow-md transition-all"
               >
-                {/* Venture Header */}
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-[#ECEAE3] pb-6">
+                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-100 pb-4">
                   <div>
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-xs font-sans font-medium uppercase tracking-wider text-[#B86B2F]">
-                        {venture.category}
-                      </span>
-                      <span className="text-[#E4E1D8]">•</span>
-                      <span className="text-xs font-mono text-[#717A84]">{venture.period}</span>
-                    </div>
-                    <h3 className="font-serif text-3xl font-normal text-[#202328]">
+                    <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
+                      {venture.role} • {venture.period}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight mt-1">
                       {venture.name}
                     </h3>
-                    <p className="text-sm font-sans text-[#2B536E] font-medium mt-0.5">
-                      {venture.tagline}
-                    </p>
                   </div>
-
-                  <div className="text-left sm:text-right">
-                    <span className="text-xs font-sans text-[#717A84] block">Role</span>
-                    <span className="font-serif text-base text-[#202328] font-normal">
-                      {venture.role}
-                    </span>
-                  </div>
+                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-neutral-100 text-neutral-700">
+                    {venture.category}
+                  </span>
                 </div>
 
-                {/* Long Description */}
-                <div className="space-y-4 text-sm sm:text-base font-sans text-[#5A626A] font-light leading-relaxed">
-                  <p>{venture.longDescription}</p>
-                </div>
+                <p className="text-base text-neutral-600 font-normal leading-relaxed">
+                  {venture.longDescription}
+                </p>
 
                 {/* Metrics Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 bg-[#FAF9F5] border border-[#E4E1D8]">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80">
                   {venture.metrics.map((metric) => (
                     <div key={metric.label}>
-                      <p className="text-[11px] font-sans text-[#717A84] uppercase tracking-wider">
+                      <p className="text-xs text-neutral-400 uppercase tracking-wider font-semibold">
                         {metric.label}
                       </p>
-                      <p className="font-serif text-lg sm:text-xl font-normal text-[#202328] mt-0.5">
+                      <p className="text-xl font-bold text-neutral-900 mt-1">
                         {metric.value}
                       </p>
                     </div>
@@ -179,30 +163,30 @@ export default function WorkPage() {
                 </div>
 
                 {/* Milestones & Focus */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-                  <div>
-                    <h4 className="text-xs font-sans font-semibold uppercase tracking-wider text-[#202328] mb-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-900">
                       Key Milestones
                     </h4>
-                    <ul className="space-y-2 text-xs sm:text-sm font-sans text-[#5A626A] font-light">
+                    <ul className="space-y-2 text-xs sm:text-sm text-neutral-600">
                       {venture.milestones.map((milestone) => (
                         <li key={milestone} className="flex items-start gap-2">
-                          <span className="text-[#2B536E] font-bold">✓</span>
+                          <span className="text-blue-600 font-bold">✓</span>
                           <span>{milestone}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div>
-                    <h4 className="text-xs font-sans font-semibold uppercase tracking-wider text-[#202328] mb-3">
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-900">
                       Focus Areas
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {venture.focus.map((f) => (
                         <span
                           key={f}
-                          className="text-xs font-mono px-3 py-1 bg-[#F6F5F1] text-[#202328] border border-[#E4E1D8]"
+                          className="text-xs font-medium px-3 py-1 rounded-full bg-neutral-100 text-neutral-700"
                         >
                           {f}
                         </span>
@@ -213,10 +197,10 @@ export default function WorkPage() {
 
                 {/* Link */}
                 {venture.websiteUrl && (
-                  <div className="pt-4 border-t border-[#ECEAE3] flex justify-end">
+                  <div className="pt-4 border-t border-neutral-100 flex justify-end">
                     <Link
                       href={venture.websiteUrl}
-                      className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-wider text-[#202328] hover:text-[#2B536E] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-neutral-900 hover:text-blue-600 transition-colors"
                     >
                       <span>Explore Related Projects & Architecture</span>
                       <ArrowRight size={14} />
@@ -229,17 +213,17 @@ export default function WorkPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="editorial-card p-8 text-center space-y-4 bg-[#FAF9F5]">
-          <h3 className="font-serif text-2xl font-light text-[#202328]">
+        <div className="rounded-3xl bg-neutral-900 text-white p-8 md:p-12 text-center space-y-4 shadow-xl">
+          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             Want to review the code and case studies?
           </h3>
-          <p className="text-sm font-sans text-[#5A626A] max-w-md mx-auto font-light">
+          <p className="text-sm sm:text-base text-neutral-300 max-w-md mx-auto font-normal">
             Check out the live portfolio of products, experiments, and technical systems I&apos;ve built.
           </p>
           <div className="pt-2">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#202328] text-white font-sans text-xs font-medium hover:bg-[#2B536E] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-neutral-900 text-xs font-semibold uppercase tracking-wider hover:bg-neutral-100 transition-all shadow-sm"
             >
               <span>View Projects & Case Studies</span>
               <ArrowRight size={14} />

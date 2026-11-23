@@ -6,54 +6,56 @@ export default function ThoughtsPreview() {
   const recentThoughts = thoughts.slice(0, 3);
 
   return (
-    <section className="py-20 px-6 border-b border-[#E4E1D8] bg-[#FAF9F5]">
+    <section className="py-20 md:py-24 px-6 border-b border-neutral-200/70 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-[#B86B2F]">
-              06 // Public Notebook
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+              06 • Public Notebook
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-light text-[#202328] tracking-tight mt-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight mt-1">
               Recent Thoughts
             </h2>
           </div>
           <Link
             href="/thoughts"
-            className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-wider text-[#202328] hover:text-[#2B536E] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-neutral-900 hover:text-blue-600 transition-colors"
           >
             <span>Read All Reflections</span>
             <ArrowRight size={14} />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {recentThoughts.map((thought) => (
             <Link
               key={thought.slug}
               href={`/thoughts/${thought.slug}`}
-              className="editorial-card p-7 flex flex-col justify-between group block"
+              className="rounded-2xl bg-white border border-neutral-200/80 p-7 flex flex-col justify-between group shadow-xs hover:border-neutral-300 hover:shadow-lg transition-all"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-[#717A84] font-sans mb-3">
-                  <span className="text-[#2B536E] font-medium">{thought.category}</span>
+                <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
+                  <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium text-[11px]">
+                    {thought.category}
+                  </span>
                   <div className="flex items-center gap-1 text-[11px]">
                     <Clock size={12} />
                     <span>{thought.readTime}</span>
                   </div>
                 </div>
 
-                <h3 className="font-serif text-xl font-normal text-[#202328] group-hover:text-[#2B536E] transition-colors leading-snug mb-3">
+                <h3 className="text-lg font-bold text-neutral-900 group-hover:text-blue-600 transition-colors leading-snug mb-3 tracking-tight">
                   {thought.title}
                 </h3>
 
-                <p className="font-sans text-xs sm:text-sm text-[#5A626A] font-light leading-relaxed line-clamp-3">
+                <p className="text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed line-clamp-3">
                   {thought.excerpt}
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#ECEAE3] flex items-center justify-between text-xs font-sans text-[#717A84]">
+              <div className="mt-8 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500">
                 <span>{thought.date}</span>
-                <span className="inline-flex items-center gap-1 text-[#202328] font-medium group-hover:translate-x-0.5 transition-transform">
+                <span className="inline-flex items-center gap-1 text-neutral-900 font-semibold group-hover:translate-x-0.5 transition-transform">
                   Read Essay <ArrowRight size={12} />
                 </span>
               </div>

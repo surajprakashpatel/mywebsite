@@ -2,28 +2,28 @@ import { Building2, Code, Cpu, Target } from "lucide-react";
 
 const pillars = [
   {
-    icon: <Building2 className="w-6 h-6 text-[#2B536E]" />,
+    icon: <Building2 className="w-5 h-5 text-neutral-900" />,
     title: "Entrepreneurship",
     description:
       "Identifying underserved markets, conceptualizing practical products, assembling teams, and navigating the messy reality of customer adoption.",
-    tags: ["Market Opportunity", "Operations", "Venture Building"],
+    tags: ["Market Discovery", "Operations", "Venture Building"],
   },
   {
-    icon: <Code className="w-6 h-6 text-[#2B536E]" />,
-    title: "Software Development",
+    icon: <Code className="w-5 h-5 text-neutral-900" />,
+    title: "Software Engineering",
     description:
-      "Architecting full-stack applications with TypeScript, Next.js, Go, and relational databases. Prioritizing performance, offline resilience, and clean systems.",
+      "Architecting full-stack applications with TypeScript, Next.js, Go, and relational databases. Prioritizing performance, offline resilience, and clean code.",
     tags: ["Full-Stack", "Distributed Systems", "Offline-First"],
   },
   {
-    icon: <Cpu className="w-6 h-6 text-[#2B536E]" />,
+    icon: <Cpu className="w-5 h-5 text-neutral-900" />,
     title: "Applied Technology",
     description:
-      "Experimenting with IoT sensors, biometric protocols, and modern developer tooling. Applying technology to eliminate manual friction.",
-    tags: ["Biometrics", "IoT Gate Telemetry", "Modern Web"],
+      "Experimenting with IoT sensors, biometric protocols, and modern developer tooling. Applying technology to eliminate manual friction in the real world.",
+    tags: ["Biometrics", "IoT Gateways", "Modern Web"],
   },
   {
-    icon: <Target className="w-6 h-6 text-[#2B536E]" />,
+    icon: <Target className="w-5 h-5 text-neutral-900" />,
     title: "Real-World Problem Solving",
     description:
       "Bridging the gap between software and non-technical stakeholders in municipal corporations, public works, and industrial manufacturing belts.",
@@ -33,19 +33,19 @@ const pillars = [
 
 export default function WhatIDo() {
   return (
-    <section className="py-20 px-6 border-b border-[#E4E1D8] bg-[#FAF9F5]">
+    <section className="py-20 md:py-24 px-6 border-b border-neutral-200/70 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-[#B86B2F]">
-              02 // Focus & Disciplines
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+              02 • Focus & Disciplines
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-light text-[#202328] tracking-tight mt-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight mt-1">
               What I Do
             </h2>
           </div>
-          <p className="text-sm font-sans text-[#5A626A] max-w-md font-light">
-            Combining engineering rigor with entrepreneurial empathy to build durable systems in domains where software was historically ignored.
+          <p className="text-sm font-normal text-neutral-600 max-w-md">
+            Combining engineering rigor with entrepreneurial empathy to build durable systems in domains where technology was historically ignored.
           </p>
         </div>
 
@@ -53,25 +53,25 @@ export default function WhatIDo() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="editorial-card p-6 flex flex-col justify-between space-y-6"
+              className="rounded-2xl bg-white border border-neutral-200/80 p-6 flex flex-col justify-between space-y-6 shadow-xs hover:border-neutral-300 hover:shadow-md transition-all group"
             >
               <div>
-                <div className="p-3 w-fit bg-[#F6F5F1] border border-[#E4E1D8] mb-4">
+                <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center mb-5 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
                   {pillar.icon}
                 </div>
-                <h3 className="font-serif text-xl font-normal text-[#202328] mb-2">
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2 tracking-tight">
                   {pillar.title}
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#5A626A] font-light leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
                   {pillar.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#ECEAE3] flex flex-wrap gap-1.5">
+              <div className="pt-4 border-t border-neutral-100 flex flex-wrap gap-1.5">
                 {pillar.tags.map((t) => (
                   <span
                     key={t}
-                    className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-[#F6F5F1] text-[#717A84] border border-[#E4E1D8]"
+                    className="text-[10px] font-medium tracking-normal px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-600"
                   >
                     {t}
                   </span>

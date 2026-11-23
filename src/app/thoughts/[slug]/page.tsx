@@ -44,24 +44,24 @@ export default async function ThoughtDetailPage({
   const nextThought = thoughts[(currentIndex + 1) % thoughts.length];
 
   return (
-    <article className="py-16 md:py-24 px-6">
+    <article className="py-16 md:py-24 px-6 bg-white">
       <div className="max-w-3xl mx-auto space-y-12">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-sans text-[#717A84]">
-          <Link href="/thoughts" className="hover:text-[#202328] transition-colors flex items-center gap-1">
+        <div className="flex items-center gap-2 text-xs text-neutral-500">
+          <Link href="/thoughts" className="hover:text-neutral-900 transition-colors flex items-center gap-1">
             <ArrowLeft size={13} />
             <span>Public Notebook</span>
           </Link>
           <span>/</span>
-          <span className="text-[#202328] font-medium truncate max-w-[200px] sm:max-w-none">
+          <span className="text-neutral-900 font-medium truncate max-w-[200px] sm:max-w-none">
             {thought.category}
           </span>
         </div>
 
         {/* Article Header */}
-        <div className="space-y-6 border-b border-[#E4E1D8] pb-10">
-          <div className="flex flex-wrap items-center gap-3 text-xs font-sans text-[#717A84]">
-            <span className="uppercase tracking-wider font-semibold text-[#B86B2F]">
+        <div className="space-y-6 border-b border-neutral-200/70 pb-10">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-500">
+            <span className="uppercase tracking-wider font-semibold text-blue-600">
               {thought.category}
             </span>
             <span>•</span>
@@ -76,44 +76,44 @@ export default async function ThoughtDetailPage({
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#202328] leading-[1.18] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight tracking-tight">
             {thought.title}
           </h1>
 
-          <p className="font-serif italic text-xl text-[#5A626A] font-light leading-relaxed">
+          <p className="text-xl text-neutral-600 font-normal leading-relaxed">
             {thought.subtitle}
           </p>
 
           {/* Author Badge */}
-          <div className="flex items-center gap-3 pt-4 border-t border-[#ECEAE3]">
-            <div className="w-9 h-9 rounded-full bg-[#EFECE6] border border-[#E4E1D8] flex items-center justify-center font-serif text-sm font-medium text-[#202328]">
+          <div className="flex items-center gap-3 pt-4 border-t border-neutral-100">
+            <div className="w-9 h-9 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs font-bold tracking-wide">
               SP
             </div>
-            <div className="text-xs font-sans">
-              <p className="font-medium text-[#202328]">Suraj Prakash Patel</p>
-              <p className="text-[#717A84]">Founder & Builder • Raigarh, India</p>
+            <div className="text-xs">
+              <p className="font-semibold text-neutral-900">Suraj Prakash Patel</p>
+              <p className="text-neutral-500">Founder & Builder • Raigarh, India</p>
             </div>
           </div>
         </div>
 
         {/* Article Body */}
-        <div className="space-y-10 text-[#202328] font-sans font-light leading-relaxed text-base sm:text-lg">
+        <div className="space-y-8 text-neutral-700 font-normal leading-relaxed text-base sm:text-lg">
           {thought.content.map((section, idx) => (
-            <div key={idx} className="space-y-6">
+            <div key={idx} className="space-y-4">
               {section.sectionHeading && (
-                <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#202328] pt-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 pt-4 tracking-tight">
                   {section.sectionHeading}
                 </h2>
               )}
 
               {section.paragraphs.map((para, pIdx) => (
-                <p key={pIdx} className="text-[#202328] font-light leading-relaxed">
+                <p key={pIdx} className="text-neutral-600 leading-relaxed">
                   {para}
                 </p>
               ))}
 
               {section.quote && (
-                <blockquote className="my-8 pl-6 border-l-2 border-[#202328] py-2 bg-[#FAF9F5] p-4 font-serif italic text-lg sm:text-xl text-[#202328] leading-snug">
+                <blockquote className="my-8 rounded-2xl bg-neutral-50 border-l-4 border-neutral-900 p-6 italic text-lg sm:text-xl text-neutral-900 leading-snug">
                   &ldquo;{section.quote}&rdquo;
                 </blockquote>
               )}
@@ -123,17 +123,17 @@ export default async function ThoughtDetailPage({
 
         {/* Key Takeaways Box */}
         {thought.keyTakeaways && thought.keyTakeaways.length > 0 && (
-          <div className="editorial-card p-8 bg-[#FAF9F5] border border-[#E4E1D8] space-y-4 my-10">
-            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-[#B86B2F]">
+          <div className="rounded-2xl p-8 bg-neutral-50 border border-neutral-200/80 space-y-4 my-10 shadow-xs">
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
               Summary & Reflection
             </span>
-            <h3 className="font-serif text-2xl font-light text-[#202328]">
+            <h3 className="text-2xl font-bold text-neutral-900 tracking-tight">
               Key Takeaways
             </h3>
-            <ul className="space-y-2.5 text-sm sm:text-base font-sans text-[#5A626A] font-light">
+            <ul className="space-y-2.5 text-sm sm:text-base text-neutral-600 font-normal">
               {thought.keyTakeaways.map((takeaway, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <span className="text-[#2B536E] font-bold mt-0.5">•</span>
+                  <span className="text-blue-600 font-bold mt-0.5">•</span>
                   <span>{takeaway}</span>
                 </li>
               ))}
@@ -142,10 +142,10 @@ export default async function ThoughtDetailPage({
         )}
 
         {/* Next Essay Footer */}
-        <div className="pt-12 border-t border-[#E4E1D8] flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="pt-12 border-t border-neutral-200/70 flex flex-col sm:flex-row items-center justify-between gap-6">
           <Link
             href="/thoughts"
-            className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-wider text-[#717A84] hover:text-[#202328] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-neutral-500 hover:text-neutral-900 transition-colors"
           >
             <ArrowLeft size={13} />
             <span>Back to All Essays</span>
@@ -153,17 +153,17 @@ export default async function ThoughtDetailPage({
 
           <Link
             href={`/thoughts/${nextThought.slug}`}
-            className="editorial-card p-4 sm:px-6 flex items-center gap-4 bg-white hover:border-[#202328] group max-w-sm"
+            className="rounded-2xl p-4 sm:px-6 flex items-center gap-4 bg-white border border-neutral-200/80 hover:border-neutral-300 hover:shadow-md transition-all group max-w-sm"
           >
             <div className="text-right">
-              <span className="text-[10px] font-sans text-[#717A84] uppercase tracking-wider block">
+              <span className="text-[10px] text-neutral-400 uppercase tracking-wider block font-semibold">
                 Next Essay
               </span>
-              <span className="font-serif text-base font-normal text-[#202328] group-hover:text-[#2B536E] transition-colors truncate block max-w-[240px]">
+              <span className="text-base font-bold text-neutral-900 group-hover:text-blue-600 transition-colors truncate block max-w-[240px]">
                 {nextThought.title}
               </span>
             </div>
-            <ChevronRight size={18} className="text-[#202328] group-hover:translate-x-1 transition-transform shrink-0" />
+            <ChevronRight size={18} className="text-neutral-900 group-hover:translate-x-1 transition-transform shrink-0" />
           </Link>
         </div>
       </div>

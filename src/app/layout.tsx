@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth h-full antialiased">
-      <body className="bg-[#F6F5F1] text-[#202328] min-h-screen flex flex-col font-sans selection:bg-[#202328] selection:text-white">
+      <body className="bg-white text-neutral-900 min-h-screen flex flex-col font-sans selection:bg-neutral-900 selection:text-white">
         <Navbar />
         <main className="flex-grow pt-20">{children}</main>
         <Footer />
