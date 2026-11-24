@@ -35,7 +35,7 @@ export default function ThoughtsPreview() {
             >
               <div>
                 <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
-                  <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium text-[11px]">
+                  <span className="font-medium text-neutral-600">
                     {thought.category}
                   </span>
                   <div className="flex items-center gap-1 text-[11px]">

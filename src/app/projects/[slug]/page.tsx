@@ -171,13 +171,11 @@ export default async function ProjectDetailPage({
               <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2.5">
                 Technology Stack:
               </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="text-xs font-medium px-3 py-1 rounded-full bg-neutral-100 text-neutral-700"
-                  >
-                    {t}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-700">
+                {project.tags.map((t, idx) => (
+                  <span key={t} className="flex items-center gap-2">
+                    {idx > 0 && <span className="text-neutral-300">•</span>}
+                    <span>{t}</span>
                   </span>
                 ))}
               </div>

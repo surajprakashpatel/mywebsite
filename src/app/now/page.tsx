@@ -150,16 +150,10 @@ export default function NowPage() {
             {nowData.reading.map((book) => (
               <div key={book.title} className="rounded-2xl bg-white border border-neutral-200/80 p-6 space-y-3 flex flex-col justify-between shadow-xs hover:border-neutral-300 hover:shadow-sm transition-all">
                 <div>
-                  <span
-                    className={`text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                      book.status === "Currently Reading"
-                        ? "bg-blue-50 text-blue-700"
-                        : "bg-neutral-100 text-neutral-600"
-                    }`}
-                  >
+                  <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
                     {book.status}
                   </span>
-                  <h3 className="text-base font-bold text-neutral-900 mt-2 tracking-tight">
+                  <h3 className="text-base font-bold text-neutral-900 mt-1 tracking-tight">
                     {book.title}
                   </h3>
                   <p className="text-xs text-neutral-500 mb-3">by {book.author}</p>

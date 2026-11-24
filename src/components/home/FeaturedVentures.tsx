@@ -34,8 +34,8 @@ export default function FeaturedVentures() {
               className="rounded-2xl bg-white border border-neutral-200/80 p-7 flex flex-col justify-between group shadow-xs hover:border-neutral-300 hover:shadow-lg transition-all"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-neutral-500 font-sans mb-4">
-                  <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-medium text-[11px]">
+                <div className="flex items-center justify-between text-xs text-neutral-500 font-sans mb-3">
+                  <span className="font-medium text-neutral-600">
                     {project.category}
                   </span>
                   <span>{project.year}</span>
@@ -62,13 +62,11 @@ export default function FeaturedVentures() {
                     <span className="font-semibold text-neutral-900">{project.stats.value}</span>
                   </div>
                 )}
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-600"
-                    >
-                      {tag}
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-500">
+                  {project.tags.slice(0, 3).map((tag, idx) => (
+                    <span key={tag} className="flex items-center gap-2">
+                      {idx > 0 && <span className="text-neutral-300">•</span>}
+                      <span>{tag}</span>
                     </span>
                   ))}
                 </div>

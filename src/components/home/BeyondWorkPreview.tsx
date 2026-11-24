@@ -61,10 +61,10 @@ export default function BeyondWorkPreview() {
                 />
               </div>
               <div className="p-6">
-                <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700">
+                <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
                   {item.tag}
-                </span>
-                <h3 className="text-lg font-bold text-neutral-900 mt-3 mb-2 group-hover:text-blue-600 transition-colors tracking-tight">
+                </p>
+                <h3 className="text-lg font-bold text-neutral-900 mt-2 mb-2 group-hover:text-blue-600 transition-colors tracking-tight">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">

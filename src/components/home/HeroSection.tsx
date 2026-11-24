@@ -17,8 +17,8 @@ export default function HeroSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Minimalist Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100/80 border border-neutral-200/70 text-xs font-sans text-neutral-700">
+            {/* Location & Status Line */}
+            <div className="flex items-center gap-2 text-xs font-sans text-neutral-600">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="font-medium">Building & Exploring • Raigarh, India</span>
             </div>

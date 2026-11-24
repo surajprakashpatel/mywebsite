@@ -139,7 +139,7 @@ export default function WorkPage() {
                       {venture.name}
                     </h3>
                   </div>
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-neutral-100 text-neutral-700">
+                  <span className="text-xs font-medium text-neutral-500">
                     {venture.category}
                   </span>
                 </div>
@@ -182,13 +182,11 @@ export default function WorkPage() {
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-900">
                       Focus Areas
                     </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {venture.focus.map((f) => (
-                        <span
-                          key={f}
-                          className="text-xs font-medium px-3 py-1 rounded-full bg-neutral-100 text-neutral-700"
-                        >
-                          {f}
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-600">
+                      {venture.focus.map((f, idx) => (
+                        <span key={f} className="flex items-center gap-2">
+                          {idx > 0 && <span className="text-neutral-300">•</span>}
+                          <span>{f}</span>
                         </span>
                       ))}
                     </div>

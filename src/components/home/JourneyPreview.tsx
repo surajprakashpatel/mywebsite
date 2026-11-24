@@ -35,7 +35,7 @@ export default function JourneyPreview() {
               <div>
                 <div className="flex items-center justify-between text-xs text-neutral-500 mb-2">
                   <span className="font-semibold text-neutral-900">{milestone.year}</span>
-                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600">
+                  <span className="text-xs font-medium text-neutral-500">
                     {milestone.category}
                   </span>
                 </div>

@@ -47,7 +47,7 @@ export default function JourneyPage() {
                     </span>
                   </div>
 
-                  <span className="text-[11px] font-medium uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700">
+                  <span className="text-xs font-medium text-neutral-500">
                     {milestone.category}
                   </span>
                 </div>

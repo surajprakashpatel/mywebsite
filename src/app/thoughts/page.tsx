@@ -46,16 +46,16 @@ export default function ThoughtsPage() {
         </div>
 
         {/* Filters and Search */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-2 border-b border-neutral-200/70">
+          <div className="flex flex-wrap items-center gap-1 sm:gap-2">
             {thoughtCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all ${
+                className={`px-3 py-1.5 text-xs font-medium transition-colors ${
                   activeCategory === cat
-                    ? "bg-neutral-900 text-white"
-                    : "bg-neutral-100 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/70"
+                    ? "text-neutral-900 border-b-2 border-neutral-900 font-semibold"
+                    : "text-neutral-500 hover:text-neutral-900"
                 }`}
               >
                 {cat}
@@ -73,7 +73,7 @@ export default function ThoughtsPage() {
               placeholder="Search essays..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-1.5 text-xs rounded-full border border-neutral-200/80 bg-neutral-50/60 focus:bg-white focus:outline-hidden focus:border-neutral-900 transition-colors"
+              className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-neutral-200/80 bg-neutral-50/60 focus:bg-white focus:outline-hidden focus:border-neutral-900 transition-colors"
             />
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function ThoughtsPage() {
             >
               <div>
                 <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
-                  <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium text-[11px]">
+                  <span className="font-medium text-neutral-600">
                     {thought.category}
                   </span>
                   <div className="flex items-center gap-1 text-[11px]">
