@@ -46,10 +46,6 @@ export default function JourneyPage() {
                       {milestone.period}
                     </span>
                   </div>
-
-                  <span className="text-xs font-medium text-neutral-500">
-                    {milestone.category}
-                  </span>
                 </div>
 
                 {/* Title and Phase */}

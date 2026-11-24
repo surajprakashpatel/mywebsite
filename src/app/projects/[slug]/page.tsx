@@ -58,11 +58,7 @@ export default async function ProjectDetailPage({
 
         {/* Project Header */}
         <div className="space-y-6 border-b border-neutral-200/70 pb-12">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
-              {project.category}
-            </span>
-            <span className="text-neutral-300">•</span>
+          <div>
             <span className="text-xs font-mono text-neutral-500">{project.year}</span>
           </div>
 
@@ -167,19 +163,7 @@ export default async function ProjectDetailPage({
               ))}
             </ul>
 
-            <div className="pt-4 border-t border-neutral-100">
-              <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2.5">
-                Technology Stack:
-              </p>
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-700">
-                {project.tags.map((t, idx) => (
-                  <span key={t} className="flex items-center gap-2">
-                    {idx > 0 && <span className="text-neutral-300">•</span>}
-                    <span>{t}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </div>
         </div>
 

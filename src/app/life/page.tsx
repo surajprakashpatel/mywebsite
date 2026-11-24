@@ -42,7 +42,7 @@ export default function LifePage() {
             <div key={section.id} className="space-y-8 border-b border-neutral-200/70 pb-16 last:border-b-0">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
-                  {`0${idx + 1} • ${section.tag}`}
+                  {`0${idx + 1}`}
                 </span>
                 <span className="text-xs text-neutral-400 uppercase tracking-wider font-medium">
                   Personal Journal

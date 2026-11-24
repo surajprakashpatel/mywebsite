@@ -67,14 +67,7 @@ export default function WhatIDo() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-neutral-100 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-500">
-                {pillar.tags.map((t, idx) => (
-                  <span key={t} className="flex items-center gap-2">
-                    {idx > 0 && <span className="text-neutral-300">•</span>}
-                    <span>{t}</span>
-                  </span>
-                ))}
-              </div>
+
             </div>
           ))}
         </div>

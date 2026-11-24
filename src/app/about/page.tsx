@@ -175,9 +175,8 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-2xl bg-white border border-neutral-200/80 p-6 space-y-4 shadow-xs">
-              <h3 className="text-lg font-bold text-neutral-900 tracking-tight flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                <span>My Strengths</span>
+              <h3 className="text-lg font-bold text-neutral-900 tracking-tight">
+                My Strengths
               </h3>
               <ul className="space-y-2.5 text-sm text-neutral-600 font-normal">
                 <li className="flex items-start gap-2">
@@ -196,9 +195,8 @@ export default function AboutPage() {
             </div>
 
             <div className="rounded-2xl bg-white border border-neutral-200/80 p-6 space-y-4 shadow-xs">
-              <h3 className="text-lg font-bold text-neutral-900 tracking-tight flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-500" />
-                <span>Areas I&apos;m Working On</span>
+              <h3 className="text-lg font-bold text-neutral-900 tracking-tight">
+                Areas I&apos;m Working On
               </h3>
               <ul className="space-y-2.5 text-sm text-neutral-600 font-normal">
                 <li className="flex items-start gap-2">

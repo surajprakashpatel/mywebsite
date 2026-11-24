@@ -35,9 +35,6 @@ export default function JourneyPreview() {
               <div>
                 <div className="flex items-center justify-between text-xs text-neutral-500 mb-2">
                   <span className="font-semibold text-neutral-900">{milestone.year}</span>
-                  <span className="text-xs font-medium text-neutral-500">
-                    {milestone.category}
-                  </span>
                 </div>
                 <h3 className="text-base font-bold text-neutral-900 mb-1 tracking-tight">
                   {milestone.title}

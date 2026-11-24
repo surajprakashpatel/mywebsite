@@ -20,10 +20,9 @@ export default function Footer() {
             <p className="text-sm font-normal text-neutral-600 max-w-sm leading-relaxed">
               Entrepreneur. Technologist. Curious by nature. Building software, solving grassroots problems, and figuring out the world along the way.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs text-neutral-500">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse" />
-              <span>Based in Raigarh & Bhilai, Chhattisgarh, India</span>
-            </div>
+            <p className="pt-2 text-xs text-neutral-500">
+              Based in Raigarh & Bhilai, Chhattisgarh, India
+            </p>
           </div>
 
           {/* Navigation Links Column */}

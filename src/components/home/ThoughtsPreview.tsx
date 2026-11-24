@@ -34,10 +34,7 @@ export default function ThoughtsPreview() {
               className="rounded-2xl bg-white border border-neutral-200/80 p-7 flex flex-col justify-between group shadow-xs hover:border-neutral-300 hover:shadow-lg transition-all"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
-                  <span className="font-medium text-neutral-600">
-                    {thought.category}
-                  </span>
+                <div className="flex items-center justify-end text-xs text-neutral-500 mb-3">
                   <div className="flex items-center gap-1 text-[11px]">
                     <Clock size={12} />
                     <span>{thought.readTime}</span>

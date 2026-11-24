@@ -17,11 +17,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Location & Status Line */}
-            <div className="flex items-center gap-2 text-xs font-sans text-neutral-600">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-medium">Building & Exploring • Raigarh, India</span>
-            </div>
+
 
             {/* Headline */}
             <div className="space-y-3">
@@ -95,10 +91,7 @@ export default function HeroSection() {
 
                 {/* Minimalist Caption Below Photo */}
                 <div className="pt-3.5 pb-1 px-2 flex items-center justify-between text-xs text-neutral-600 font-sans">
-                  <div className="flex items-center gap-1.5 font-medium text-neutral-900">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                    <span>Suraj Prakash Patel</span>
-                  </div>
+                  <span className="font-medium text-neutral-900">Suraj Prakash Patel</span>
                   <span className="text-neutral-500">Raigarh, CG, India</span>
                 </div>
               </div>

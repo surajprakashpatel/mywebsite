@@ -7,12 +7,9 @@ export default function CurrentlyExploring() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
-                07 • Live Status
-              </span>
-            </div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 block mb-2">
+              07 • Live Status
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight">
               Currently Exploring
             </h2>

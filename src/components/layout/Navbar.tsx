@@ -74,15 +74,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Right Action / Status */}
+          {/* Right Action */}
           <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/now"
-              className="inline-flex items-center gap-1.5 text-xs font-sans text-neutral-600 hover:text-neutral-900 px-3 py-1 rounded-full border border-neutral-200/70 bg-neutral-50/60 hover:bg-neutral-100/60 transition-all"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Now</span>
-            </Link>
             <Link
               href="/contact"
               className="inline-flex items-center gap-1 text-xs font-sans font-medium px-4 py-1.5 bg-neutral-900 text-white hover:bg-neutral-800 rounded-full transition-all shadow-xs"
@@ -137,15 +130,7 @@ export default function Navbar() {
                 );
               })}
 
-              <div className="pt-4 mt-2 border-t border-neutral-100 flex items-center justify-between">
-                <Link
-                  href="/now"
-                  onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center gap-2 text-xs font-medium text-neutral-600"
-                >
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>See what I&apos;m doing now</span>
-                </Link>
+              <div className="pt-4 mt-2 border-t border-neutral-100 flex items-center justify-end">
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}

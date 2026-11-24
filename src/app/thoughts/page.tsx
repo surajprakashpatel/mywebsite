@@ -5,27 +5,15 @@ import Link from "next/link";
 import { ArrowRight, Clock, Search } from "lucide-react";
 import { thoughts } from "@/data/thoughts";
 
-const thoughtCategories = [
-  "All",
-  "Entrepreneurship & Startups",
-  "Business & Strategy",
-  "Technology & AI",
-  "Lessons from Failure",
-  "Personal Reflections",
-] as const;
-
 export default function ThoughtsPage() {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredThoughts = thoughts.filter((thought) => {
-    const matchesCategory =
-      activeCategory === "All" || thought.category === activeCategory;
-    const matchesSearch =
+    return (
       thought.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       thought.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      thought.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+      thought.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   });
 
   return (
@@ -45,24 +33,11 @@ export default function ThoughtsPage() {
           </p>
         </div>
 
-        {/* Filters and Search */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-2 border-b border-neutral-200/70">
-          <div className="flex flex-wrap items-center gap-1 sm:gap-2">
-            {thoughtCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1.5 text-xs font-medium transition-colors ${
-                  activeCategory === cat
-                    ? "text-neutral-900 border-b-2 border-neutral-900 font-semibold"
-                    : "text-neutral-500 hover:text-neutral-900"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+        {/* Search Bar */}
+        <div className="flex items-center justify-between gap-4 pb-2 border-b border-neutral-200/70">
+          <div className="text-xs text-neutral-500 font-medium">
+            Showing all reflections
           </div>
-
           <div className="relative w-full md:w-64">
             <Search
               size={14}
@@ -87,10 +62,7 @@ export default function ThoughtsPage() {
               className="rounded-2xl bg-white border border-neutral-200/80 p-7 md:p-8 flex flex-col justify-between group shadow-xs hover:border-neutral-300 hover:shadow-lg transition-all block"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
-                  <span className="font-medium text-neutral-600">
-                    {thought.category}
-                  </span>
+                <div className="flex items-center justify-end text-xs text-neutral-500 mb-3">
                   <div className="flex items-center gap-1 text-[11px]">
                     <Clock size={12} />
                     <span>{thought.readTime}</span>

@@ -34,10 +34,7 @@ export default function FeaturedVentures() {
               className="rounded-2xl bg-white border border-neutral-200/80 p-7 flex flex-col justify-between group shadow-xs hover:border-neutral-300 hover:shadow-lg transition-all"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-neutral-500 font-sans mb-3">
-                  <span className="font-medium text-neutral-600">
-                    {project.category}
-                  </span>
+                <div className="flex items-center justify-end text-xs text-neutral-500 font-sans mb-3">
                   <span>{project.year}</span>
                 </div>
 
@@ -55,22 +52,12 @@ export default function FeaturedVentures() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-neutral-100 space-y-3">
-                {project.stats && (
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-neutral-500">{project.stats.label}</span>
-                    <span className="font-semibold text-neutral-900">{project.stats.value}</span>
-                  </div>
-                )}
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-500">
-                  {project.tags.slice(0, 3).map((tag, idx) => (
-                    <span key={tag} className="flex items-center gap-2">
-                      {idx > 0 && <span className="text-neutral-300">•</span>}
-                      <span>{tag}</span>
-                    </span>
-                  ))}
+              {project.stats && (
+                <div className="mt-8 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+                  <span className="text-neutral-500">{project.stats.label}</span>
+                  <span className="font-semibold text-neutral-900">{project.stats.value}</span>
                 </div>
-              </div>
+              )}
             </Link>
           ))}
         </div>

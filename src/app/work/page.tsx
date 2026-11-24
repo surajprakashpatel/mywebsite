@@ -139,9 +139,6 @@ export default function WorkPage() {
                       {venture.name}
                     </h3>
                   </div>
-                  <span className="text-xs font-medium text-neutral-500">
-                    {venture.category}
-                  </span>
                 </div>
 
                 <p className="text-base text-neutral-600 font-normal leading-relaxed">
@@ -162,8 +159,8 @@ export default function WorkPage() {
                   ))}
                 </div>
 
-                {/* Milestones & Focus */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
+                {/* Milestones */}
+                <div className="pt-2">
                   <div className="space-y-3">
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-900">
                       Key Milestones
@@ -176,20 +173,6 @@ export default function WorkPage() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-900">
-                      Focus Areas
-                    </h4>
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-600">
-                      {venture.focus.map((f, idx) => (
-                        <span key={f} className="flex items-center gap-2">
-                          {idx > 0 && <span className="text-neutral-300">•</span>}
-                          <span>{f}</span>
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </div>
 

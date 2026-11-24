@@ -1,5 +1,3 @@
-import { Sparkles } from "lucide-react";
-
 export default function PhilosophyQuote() {
   return (
     <section className="py-20 md:py-28 px-6 bg-white border-b border-neutral-200/70">

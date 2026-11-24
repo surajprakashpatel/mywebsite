@@ -15,16 +15,9 @@ export default function NowPage() {
       <div className="max-w-4xl mx-auto space-y-16">
         {/* Header */}
         <div className="space-y-4 border-b border-neutral-200/70 pb-12">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
-              The /now Movement
-            </span>
-            <span className="text-neutral-300">•</span>
-            <div className="inline-flex items-center gap-1.5 text-xs text-emerald-700 font-medium">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Updated {nowData.lastUpdated}</span>
-            </div>
-          </div>
+          <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 block">
+            The /now Movement
+          </span>
 
           <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
             What I&apos;m doing <span className="text-neutral-500 font-normal">these days.</span>
@@ -150,10 +143,7 @@ export default function NowPage() {
             {nowData.reading.map((book) => (
               <div key={book.title} className="rounded-2xl bg-white border border-neutral-200/80 p-6 space-y-3 flex flex-col justify-between shadow-xs hover:border-neutral-300 hover:shadow-sm transition-all">
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-                    {book.status}
-                  </span>
-                  <h3 className="text-base font-bold text-neutral-900 mt-1 tracking-tight">
+                  <h3 className="text-base font-bold text-neutral-900 tracking-tight">
                     {book.title}
                   </h3>
                   <p className="text-xs text-neutral-500 mb-3">by {book.author}</p>
@@ -179,9 +169,6 @@ export default function NowPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {nowData.personalGoals.map((g) => (
               <div key={g.goal} className="rounded-2xl bg-white border border-neutral-200/80 p-6 space-y-2 shadow-xs hover:border-neutral-300 hover:shadow-sm transition-all">
-                <span className="text-[10px] font-medium uppercase tracking-wider text-blue-600">
-                  {g.category}
-                </span>
                 <h3 className="text-base font-bold text-neutral-900 tracking-tight">
                   {g.goal}
                 </h3>

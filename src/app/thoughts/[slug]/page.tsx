@@ -54,17 +54,13 @@ export default async function ThoughtDetailPage({
           </Link>
           <span>/</span>
           <span className="text-neutral-900 font-medium truncate max-w-[200px] sm:max-w-none">
-            {thought.category}
+            {thought.title}
           </span>
         </div>
 
         {/* Article Header */}
         <div className="space-y-6 border-b border-neutral-200/70 pb-10">
           <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-500">
-            <span className="uppercase tracking-wider font-semibold text-blue-600">
-              {thought.category}
-            </span>
-            <span>•</span>
             <span className="flex items-center gap-1">
               <Calendar size={13} />
               {thought.date}
